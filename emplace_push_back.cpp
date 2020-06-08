@@ -53,6 +53,11 @@ int main(int argc, char** argv)
   vec_bc.push_back(b4);
   vec_bc.push_back(std::move(b4));
 
+  std::cout << "--------------------------------push_back move const lvalue:" << std::endl;
+  const BaseClass b5("b5", 1);
+  vec_bc.push_back(b5);
+  vec_bc.push_back(std::move(b5));
+
   vec_bc.shrink_to_fit(); // 存在移动的可能
   std::cout << "--------------------------------destruct:" << std::endl;
 }
