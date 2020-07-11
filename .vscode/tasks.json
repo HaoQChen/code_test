@@ -1,0 +1,79 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "source_setup",
+            "type": "shell",
+            "command": "source ./devel/setup.zsh && export ROS_MASTER_URI=http://localhost:11311/ "
+        },
+        {
+            "label": "sleep2",
+            "type": "shell",
+            "command": "sleep 2",
+            "group": "none",
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "close_terminal",
+            "type": "shell",
+            "command": "rosnode kill /cloud_node ; rosnode kill /rviz ; rosnode kill /rslidar_node",
+            "group": "none",
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "catkin build",
+            "type": "shell",
+            "command": "catkin",
+            "args": [
+                "build",
+                "-DCMAKE_BUILD_TYPE=Debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "catkin clean",
+            "type": "shell",
+            "command": "catkin",
+            "args": [
+                "clean",
+                "-y"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "ccb",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "catkin clean",
+                "catkin build"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ]
+        }
+    ]
+}
