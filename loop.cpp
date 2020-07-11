@@ -101,8 +101,7 @@ int main(int argc, char** argv)
     clock_gettime(CLOCK_THREAD_CPUTIME_ID, &time_start);
 
     i = 0;
-    for (; i < loop_count; ++i)
-    {
+    for (; i < loop_count; ++i){
         
     }
 
