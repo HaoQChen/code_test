@@ -32,6 +32,21 @@ struct s12
     alignas(16) char s;
 };
 
+struct test1
+{
+    char a[6];
+    int b;
+};
+
+struct test2
+{
+    char c[4];
+    char d[4];
+    char e;
+    char f;
+    test1 t1;
+    char g;
+};
 
 int main (int argc, char** argv)
 {
@@ -45,4 +60,11 @@ int main (int argc, char** argv)
   std::cout << "double start:   " << &pm.timestamp << std::endl;
   std::cout << "frame_id start: " << &pm.frame_id << std::endl;
   std::cout << "packet start:   " << &pm.packet << std::endl;  
+
+  test2 test;
+  std::cout << "test: " << static_cast<const void *>(&test) << std::endl;
+  std::cout << "f:    " << static_cast<const void *>(&test.f) << std::endl;
+  std::cout << "t1:   " << static_cast<const void *>(&test.t1) << std::endl;
+  std::cout << "b:    " << static_cast<const void *>(&test.t1.b) << std::endl;
+  std::cout << "g:    " << static_cast<const void *>(&test.g) << std::endl;
 }
