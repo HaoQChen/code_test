@@ -1,0 +1,307 @@
+﻿---
+# 参考https://releases.llvm.org/10.0.0/tools/clang/docs/ClangFormatStyleOptions.html
+
+Language:        Cpp
+# BasedOnStyle:  Google
+
+# 访问说明符(public、private等)的偏移
+AccessModifierOffset: -2
+
+# 开括号(开圆括号、开尖括号、开方括号)后的对齐
+AlignAfterOpenBracket: Align
+
+# 连续赋值时，对齐所有等号
+AlignConsecutiveAssignments: true
+
+# 连续位域定义，对齐所有位域符
+#12 AlignConsecutiveBitFields: true
+
+# 连续声明时，对齐所有声明的变量名
+AlignConsecutiveDeclarations: false
+
+# 连续宏定义时，对齐所有定义值
+AlignConsecutiveMacros: true
+
+# 左对齐连续的换行斜杠
+AlignEscapedNewlines: Left
+
+# 水平对齐二元和三元表达式的操作数
+#12 AlignOperands:   AlignAfterOperator
+AlignOperands: true  
+
+# 对齐尾部注释
+AlignTrailingComments: true
+
+# 不允许所有参数堆放在下一行
+AllowAllArgumentsOnNextLine: false
+
+# 允许初始化列表的所有值堆放在下一行
+AllowAllConstructorInitializersOnNextLine: true
+
+# 不允许函数声明中的参数都堆放在下一行
+AllowAllParametersOfDeclarationOnNextLine: false
+
+# 允许短的块放在同一行
+AllowShortBlocksOnASingleLine: Always
+
+# 允许短的case放在同一行
+AllowShortCaseLabelsOnASingleLine: true
+
+# 允许短的enum放在同一行
+#12 AllowShortEnumsOnASingleLine: true
+
+# 允许所有短的函数放在同一行
+AllowShortFunctionsOnASingleLine: All
+
+# 不允许短的if表达式放在同一行
+AllowShortIfStatementsOnASingleLine: Never
+
+# 允许短的lambda表达式放在同一行
+AllowShortLambdasOnASingleLine: All
+
+# 不允许短的循环放在同一行
+AllowShortLoopsOnASingleLine: false
+
+# 不允许函数返回类型后的换行
+AlwaysBreakAfterReturnType: None
+
+# 连续的namespace不放在同一行
+CompactNamespaces: false
+
+# 多行字符串前不换行
+AlwaysBreakBeforeMultilineStrings: false
+
+# 模板声明后总是换行
+AlwaysBreakTemplateDeclarations: Yes
+
+# 函数调用时的参数是否都在同一行
+BinPackArguments: true
+
+# 函数声明的形参是否都在同一行
+BinPackParameters: false
+
+# 大括号是否换行，只有当BreakBeforeBraces设置为Custom时才有效
+BreakBeforeBraces: Custom
+BraceWrapping:   
+  # case后的括号
+  AfterCaseLabel:  true
+  # 类定义后的大括号
+  AfterClass:      true
+  # 控制语句后的大括号
+  AfterControlStatement: Always
+  # enum后的大括号
+  AfterEnum:       true
+  # 函数后的大括号
+  AfterFunction:   true
+  # 命名空间后的大括号
+  AfterNamespace:  true
+  # ObjC的实现和interfaces
+  AfterObjCDeclaration: false
+  # struct后的大括号
+  AfterStruct:     true
+  # union后的大括号
+  AfterUnion:      true
+  # catch前的大括号
+  BeforeCatch:     true
+  # else前的大括号
+  BeforeElse:      true
+  # lambda前的大括号
+  #12 BeforeLambdaBody: false
+  # while前的大括号
+  #12 BeforeWhile:     false
+  # 缩进大括号
+  IndentBraces:    false
+  # 空的函数，设置成false后可以放在同一行
+  SplitEmptyFunction: false
+  # 空的结构体
+  SplitEmptyRecord: false
+  # 空的命名空间
+  SplitEmptyNamespace: false
+  # extern后的换行
+  AfterExternBlock: true
+
+# 如果换行，在二元操作符后换行
+BreakBeforeBinaryOperators: None
+
+# 如果换行，在三元操作符前换行
+BreakBeforeTernaryOperators: true
+
+# 如果换行，在初始化列表的冒号及逗号后面换行
+BreakConstructorInitializers: AfterColon
+
+# 如果换行，在类的继承列表的冒号及逗号后换行
+BreakInheritanceList: AfterColon
+
+# 允许自定义字符换行（否则强制放在一行）
+BreakStringLiterals: true
+
+# 一行的字符限制
+ColumnLimit:     120
+
+# 特殊的注释？
+CommentPragmas:  '^ IWYU pragma:'
+
+# 如果初始化列表不适合放在同一行，则每个放一行
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+
+# 初始化列表的缩进宽度
+ConstructorInitializerIndentWidth: 2
+
+# 连续行（语句一行写不下）的缩进
+ContinuationIndentWidth: 2
+
+# 大括号初始化，设置为括号中有空格
+Cpp11BracedListStyle: false
+
+# 自动分析用哪种换行，如果找不到，则使用UseCRLF的值。
+DeriveLineEnding: true
+UseCRLF: false
+
+# 自动分析用*和&是放左边还是放右边，如果分析不出则使用PointerAlignment的值
+# 不能自动分析。。会把自己的给搞错
+DerivePointerAlignment: false
+PointerAlignment: Left
+
+# 禁用格式化
+DisableFormat:   false
+
+# 这是一个实验性质的特性，是否自动分析函数参数的换行方式
+ExperimentalAutoDetectBinPacking: false
+
+# 自动添加命名空间注释
+FixNamespaceComments: true
+
+# 需要被解读为foreach循环而不是函数调用的宏
+ForEachMacros:   [ foreach, Q_FOREACH, BOOST_FOREACH ]
+
+# case的block缩进
+#12 IndentCaseBlocks: true
+
+# case这几个字不缩进
+IndentCaseLabels: false
+
+# extern的缩进方式
+#12 IndentExternBlock: AfterExternBlock
+
+# goto标签的缩进方式
+IndentGotoLabels: true
+
+# 多个预处理命令的缩进方式
+IndentPPDirectives: AfterHash
+
+# 缩进宽度
+IndentWidth: 2
+
+# 如果函数定义或声明时类型后面换行的话，函数名是否缩进
+IndentWrappedFunctionNames: false
+
+# 是否保留块前面的空行，设成true，主要一些为了美观的人为空行不希望被删掉
+KeepEmptyLinesAtTheStartOfBlocks: true
+
+# 最大连续的空行数
+MaxEmptyLinesToKeep: 1
+
+# 开始和结束一段代码块的宏
+MacroBlockBegin: ''
+MacroBlockEnd:   ''
+
+# 命名空间中内容的缩进
+NamespaceIndentation: None
+
+# 使用ObjC块时缩进宽度
+ObjCBlockIndentWidth: 2
+
+# 在ObjC的@property后添加一个空格
+ObjCSpaceAfterProperty: false
+
+# 在ObjC的protocol列表前添加一个空格
+ObjCSpaceBeforeProtocolList: false
+
+# 在call(后对函数调用换行的penalty
+PenaltyBreakBeforeFirstCallParameter: 1
+# 在一个注释中引入换行的penalty
+PenaltyBreakComment: 300
+# 第一次在<<前换行的penalty
+PenaltyBreakFirstLessLess: 120
+# 在一个字符串字面量中引入换行的penalty
+PenaltyBreakString: 1000
+# 对于每个在行字符数限制之外的字符的penalty
+PenaltyExcessCharacter: 1000000
+# 将函数的返回类型放到它自己的行的penalty
+PenaltyReturnTypeOnItsOwnLine: 200
+
+# 不要重新整理注释
+ReflowComments:  false
+
+# 是否对include的头文件进行自动排序，有些是有依赖顺序的，不应该随意更改。
+SortIncludes:    true
+
+# 是否对using的声明进行排序
+SortUsingDeclarations: true
+
+# 是否在C格式的类型转换后加空格
+SpaceAfterCStyleCast: false
+
+# 是否在取反符号!后加空格
+SpaceAfterLogicalNot: false
+
+# 在template后面是否加空格
+SpaceAfterTemplateKeyword: true
+
+# 在赋值符前面是否加空格
+SpaceBeforeAssignmentOperators: true
+
+# 在初始化列表前是否加空格
+SpaceBeforeCpp11BracedList: true
+
+# 构造函数初始化列表冒号前面是否加空格
+SpaceBeforeCtorInitializerColon: true
+
+# 类继承列表的冒号前面是否加空格
+SpaceBeforeInheritanceColon: true
+
+# 开圆括号之前添加一个空格，仅在控制语句前（函数名后面不加）
+SpaceBeforeParens: ControlStatements
+
+# range based的for循环的冒号前是否加空格
+SpaceBeforeRangeBasedForLoopColon: true
+
+# 方括号前是否加空格
+SpaceBeforeSquareBrackets: false
+
+# 空的{}中是否要加空格
+SpaceInEmptyBlock: false
+
+# 空的()中间是否要加空格
+SpaceInEmptyParentheses: false
+
+# 尾部注释前的空格
+SpacesBeforeTrailingComments: 2
+
+# 在<>括号中间是否要加两个空格
+SpacesInAngles:  false
+
+# 在C格式的类型转换的()中是否要加两个空格
+SpacesInCStyleCastParentheses: false
+
+# 在条件判断的()中是否要加两个空格
+SpacesInConditionalStatement: false
+
+# 容器初始化中，是否在[]{}中间加两个空格
+SpacesInContainerLiterals: true
+
+# ()中间是否要加两个空格
+SpacesInParentheses: false
+
+# []中间是否要加两个空格
+SpacesInSquareBrackets: false
+
+# 标准: Cpp03, Cpp11, Auto
+Standard:        Auto
+
+# tab的宽度
+TabWidth:        2
+
+# 是否只用tab
+UseTab:          Never
+...
